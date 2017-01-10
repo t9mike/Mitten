@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EDEB2CE7-61DD-4B24-BEB7-74B4A6FE88AF}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Foundation.Mobile.iOS</RootNamespace>
+    <AssemblyName>Mitten.Mobile.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <IOSDebuggerPort>40850</IOSDebuggerPort>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchLink></MtouchLink>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+    <MtouchTlsProvider></MtouchTlsProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchHttpClientHandler></MtouchHttpClientHandler>
+    <MtouchTlsProvider></MtouchTlsProvider>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Application\" />
+    <Folder Include="Application\Components\" />
+    <Folder Include="System\" />
+    <Folder Include="ViewControllers\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Renderers\" />
+    <Folder Include="Identity\" />
+    <Folder Include="Graphics\" />
+    <Folder Include="Devices\" />
+    <Folder Include="Application\PushNotifications\" />
+    <Folder Include="Application\AddressBook\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Cache.cs" />
+    <Compile Include="ByteCache.cs" />
+    <Compile Include="UIImageCache.cs" />
+    <Compile Include="Extensions\CGRectExtensions.cs" />
+    <Compile Include="Extensions\ColorExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\NSDateExtensions.cs" />
+    <Compile Include="System\iOSNetworkStatus.cs" />
+    <Compile Include="System\iOSSystemInformation.cs" />
+    <Compile Include="Navigation.cs" />
+    <Compile Include="ViewControllers\UIViewController.cs" />
+    <Compile Include="ViewControllers\UIViewControllerFactory.cs" />
+    <Compile Include="ViewControllers\ViewControllerNotFoundException.cs" />
+    <Compile Include="Views\CloseWindowHandler.cs" />
+    <Compile Include="Views\LinkStringView.cs" />
+    <Compile Include="Views\LoadingOverlayView.cs" />
+    <Compile Include="Views\Margins.cs" />
+    <Compile Include="Views\Renderers\Renderer.cs" />
+    <Compile Include="Views\Renderers\ActivitySpinnerRenderer.cs" />
+    <Compile Include="Views\Renderers\CheckBoxRenderer.cs" />
+    <Compile Include="Views\CheckBoxView.cs" />
+    <Compile Include="Views\ViewThemeExtensions.cs" />
+    <Compile Include="Views\ViewFontSizes.cs" />
+    <Compile Include="Views\AttributedString.cs" />
+    <Compile Include="Views\UIFontExtensions.cs" />
+    <Compile Include="Views\UIImageExtensions.cs" />
+    <Compile Include="Views\HtmlThemeExtensions.cs" />
+    <Compile Include="Views\SegmentedControl.cs" />
+    <Compile Include="Views\SegmentedControlItem.cs" />
+    <Compile Include="Views\LoadingOverlay.cs" />
+    <Compile Include="ViewControllers\StoryboardAttribute.cs" />
+    <Compile Include="Identity\KeyChainAccountStore.cs" />
+    <Compile Include="Graphics\ImageTransform.cs" />
+    <Compile Include="Graphics\UIImageByteConverter.cs" />
+    <Compile Include="Devices\CameraDevice.cs" />
+    <Compile Include="Devices\CameraPermissionException.cs" />
+    <Compile Include="Application\iOSApplicationHost.cs" />
+    <Compile Include="Devices\iOSDeviceCatalog.cs" />
+    <Compile Include="Application\Components\iOSCameraComponent.cs" />
+    <Compile Include="Application\Components\iOSBrowserComponent.cs" />
+    <Compile Include="Application\Components\ImageComponent.cs" />
+    <Compile Include="Application\Components\iOSMediaLibrary.cs" />
+    <Compile Include="Application\Components\iOSEmailComponent.cs" />
+    <Compile Include="Application\Components\iOSPhoneComponent.cs" />
+    <Compile Include="Application\PushNotifications\iOSPushNotificationConverter.cs" />
+    <Compile Include="Application\PushNotifications\iOSPushNotificationRegistry.cs" />
+    <Compile Include="Application\AddressBook\iOSAddressBook.cs" />
+    <Compile Include="Application\iOSApplicationAlert.cs" />
+    <Compile Include="Application\iOSDeviceSettings.cs" />
+    <Compile Include="Application\iOSDeviceStatusBar.cs" />
+    <Compile Include="Application\Components\iOSComponentCatalog.cs" />
+    <Compile Include="ViewControllers\UITabBarController.cs" />
+    <Compile Include="ViewControllers\KeyboardLayoutAnimation.cs" />
+    <Compile Include="ViewControllers\KeyboardLayoutCustomAnimation.cs" />
+    <Compile Include="ViewControllers\KeyboardLayoutHandler.cs" />
+    <Compile Include="ViewControllers\KeyboardLayoutHideSectionAnimation.cs" />
+    <Compile Include="ViewControllers\KeyboardLayoutMoveAnimation.cs" />
+    <Compile Include="Views\ViewAnimation.cs" />
+    <Compile Include="Views\RadioTableView.cs" />
+    <Compile Include="ViewControllers\UIEntityTableViewController.cs" />
+    <Compile Include="ViewControllers\UIEntityTableViewSource.cs" />
+    <Compile Include="ViewControllers\UIEntityTableViewCell.cs" />
+    <Compile Include="ViewControllers\ViewControllerTypes.cs" />
+    <Compile Include="Views\UIViewExtensions.cs" />
+    <Compile Include="Views\AnchorEdges.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mitten.Mobile\Mitten.Mobile.csproj">
+      <Project>{8702BA33-9C3F-415F-BB55-FE2EB7EBFCE0}</Project>
+      <Name>Mitten.Mobile</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+</Project>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8702BA33-9C3F-415F-BB55-FE2EB7EBFCE0}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <UseMSBuildEngine>true</UseMSBuildEngine>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Foundation.Mobile</RootNamespace>
+    <AssemblyName>Mitten.Mobile</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Devices\CameraFlashMode.cs" />
+    <Compile Include="Devices\CameraPermission.cs" />
+    <Compile Include="Devices\ICameraDevice.cs" />
+    <Compile Include="Devices\SimulatedCameraDevice.cs" />
+    <Compile Include="Graphics\Color.cs" />
+    <Compile Include="Graphics\ColorGenerator.cs" />
+    <Compile Include="Graphics\IImageTransform.cs" />
+    <Compile Include="Graphics\ImageValidator.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Throw.cs" />
+    <Compile Include="Model\Entity.cs" />
+    <Compile Include="Remote\ImageOptions.cs" />
+    <Compile Include="Remote\ImageResizeMode.cs" />
+    <Compile Include="Remote\IResourceDownloader.cs" />
+    <Compile Include="Remote\RemoteImageCatalog.cs" />
+    <Compile Include="Remote\RemoteImageRequest.cs" />
+    <Compile Include="Remote\ServiceRequestException.cs" />
+    <Compile Include="Remote\ServiceResult.cs" />
+    <Compile Include="Remote\ServiceResultCode.cs" />
+    <Compile Include="ICache.cs" />
+    <Compile Include="Remote\Http\Json\CustomEnumConverter.cs" />
+    <Compile Include="Remote\Http\Json\PrivateSetterContractResolver.cs" />
+    <Compile Include="Remote\Http\DelayedHttpClient.cs" />
+    <Compile Include="Remote\Http\HttpServiceClient.cs" />
+    <Compile Include="Remote\Http\HttpServiceClientException.cs" />
+    <Compile Include="Remote\Http\RequestParameter.cs" />
+    <Compile Include="Remote\Http\HttpResourceDownloader.cs" />
+    <Compile Include="System\INetworkStatus.cs" />
+    <Compile Include="System\ISystemInformation.cs" />
+    <Compile Include="System\NetworkAvailability.cs" />
+    <Compile Include="System\NetworkAvailabilityException.cs" />
+    <Compile Include="System\PlatformType.cs" />
+    <Compile Include="ViewModels\INavigation.cs" />
+    <Compile Include="ViewModels\NavigationOptions.cs" />
+    <Compile Include="ViewModels\PresentationType.cs" />
+    <Compile Include="ViewModels\ITableViewSource.cs" />
+    <Compile Include="ViewModels\LinkString.cs" />
+    <Compile Include="ViewModels\MenuItem.cs" />
+    <Compile Include="ViewModels\NavigationBarTitle.cs" />
+    <Compile Include="ViewModels\ViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelNotLoadedException.cs" />
+    <Compile Include="ViewModels\ViewModelFactory.cs" />
+    <Compile Include="Validation\RequiredRule.cs" />
+    <Compile Include="Validation\ValidationComposition.cs" />
+    <Compile Include="Validation\ValidationException.cs" />
+    <Compile Include="Validation\ValidationResult.cs" />
+    <Compile Include="Validation\ValidEmailRule.cs" />
+    <Compile Include="Validation\ValidPasswordRule.cs" />
+    <Compile Include="Identity\ILocalAccountStore.cs" />
+    <Compile Include="Application\ApplicationHost.cs" />
+    <Compile Include="Identity\IAuthenticationManager.cs" />
+    <Compile Include="Identity\IAccount.cs" />
+    <Compile Include="Identity\AccountCredentials.cs" />
+    <Compile Include="Application\Components\IEmailComponent.cs" />
+    <Compile Include="Application\Components\IPhoneComponent.cs" />
+    <Compile Include="Application\Components\IBrowserComponent.cs" />
+    <Compile Include="Application\Components\IMediaLibrary.cs" />
+    <Compile Include="Application\Components\ICameraComponent.cs" />
+    <Compile Include="Application\Components\CameraPosition.cs" />
+    <Compile Include="Application\LongRunningTask.cs" />
+    <Compile Include="Application\Session.cs" />
+    <Compile Include="Application\AuthenticationProcess.cs" />
+    <Compile Include="Application\ApplicationInstance.cs" />
+    <Compile Include="Identity\SignInResponseContent.cs" />
+    <Compile Include="Application\ApplicationInitializationException.cs" />
+    <Compile Include="Application\IApplicationInstanceFactory.cs" />
+    <Compile Include="Application\SessionExpiredException.cs" />
+    <Compile Include="Themes\LabelTheme.cs" />
+    <Compile Include="Themes\ButtonTheme.cs" />
+    <Compile Include="Themes\FontStyle.cs" />
+    <Compile Include="Themes\HtmlTheme.cs" />
+    <Compile Include="Themes\NavigationBarTheme.cs" />
+    <Compile Include="Graphics\Colors.cs" />
+    <Compile Include="ViewModels\StyledText.cs" />
+    <Compile Include="Themes\SegmentedControlTheme.cs" />
+    <Compile Include="Themes\StatusBarStyle.cs" />
+    <Compile Include="Themes\TextFieldTheme.cs" />
+    <Compile Include="ViewModels\ILoadingOverlay.cs" />
+    <Compile Include="Devices\IDeviceCatalog.cs" />
+    <Compile Include="Application\IAuthenticationProcess.cs" />
+    <Compile Include="Application\Components\IComponentCatalog.cs" />
+    <Compile Include="Application\PushNotifications\IPushNotificationServerRegistration.cs" />
+    <Compile Include="Application\PushNotifications\PushNotification.cs" />
+    <Compile Include="Application\PushNotifications\PushNotificationAttribute.cs" />
+    <Compile Include="Application\PushNotifications\PushNotificationParseResult.cs" />
+    <Compile Include="Application\PushNotifications\PushNotificationRegistry.cs" />
+    <Compile Include="Application\IProgress.cs" />
+    <Compile Include="Application\AlertOption.cs" />
+    <Compile Include="Application\AlertOptionType.cs" />
+    <Compile Include="Application\AlertStyle.cs" />
+    <Compile Include="Application\IApplicationAlert.cs" />
+    <Compile Include="Application\IDeviceSettings.cs" />
+    <Compile Include="Application\IDeviceStatusBar.cs" />
+    <Compile Include="Application\AddressBook\Address.cs" />
+    <Compile Include="Application\AddressBook\AddressBookEntry.cs" />
+    <Compile Include="Application\AddressBook\AddressBookPermission.cs" />
+    <Compile Include="Application\AddressBook\IAddressBook.cs" />
+    <Compile Include="System\RuntimeEnvironment.cs" />
+    <Compile Include="ViewModels\IPageableTableViewSource.cs" />
+    <Compile Include="Application\PushNotifications\PushNotificationTypes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Devices\" />
+    <Folder Include="Graphics\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Model\" />
+    <Folder Include="Remote\" />
+    <Folder Include="Remote\Http\" />
+    <Folder Include="Remote\Http\Json\" />
+    <Folder Include="System\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Validation\" />
+    <Folder Include="Application\" />
+    <Folder Include="Identity\" />
+    <Folder Include="Application\Components\" />
+    <Folder Include="Themes\" />
+    <Folder Include="Application\PushNotifications\" />
+    <Folder Include="Application\AddressBook\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>

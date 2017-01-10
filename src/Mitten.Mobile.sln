@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{38C424AE-7E2D-46F1-B5EF-1E12E771B36B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mitten.Mobile", "Mitten.Mobile\Mitten.Mobile.csproj", "{8702BA33-9C3F-415F-BB55-FE2EB7EBFCE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mitten.Mobile.iOS", "Mitten.Mobile.iOS\Mitten.Mobile.iOS.csproj", "{EDEB2CE7-61DD-4B24-BEB7-74B4A6FE88AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8702BA33-9C3F-415F-BB55-FE2EB7EBFCE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8702BA33-9C3F-415F-BB55-FE2EB7EBFCE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8702BA33-9C3F-415F-BB55-FE2EB7EBFCE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8702BA33-9C3F-415F-BB55-FE2EB7EBFCE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEB2CE7-61DD-4B24-BEB7-74B4A6FE88AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEB2CE7-61DD-4B24-BEB7-74B4A6FE88AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEB2CE7-61DD-4B24-BEB7-74B4A6FE88AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEB2CE7-61DD-4B24-BEB7-74B4A6FE88AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8702BA33-9C3F-415F-BB55-FE2EB7EBFCE0} = {38C424AE-7E2D-46F1-B5EF-1E12E771B36B}
+		{EDEB2CE7-61DD-4B24-BEB7-74B4A6FE88AF} = {38C424AE-7E2D-46F1-B5EF-1E12E771B36B}
+	EndGlobalSection
+EndGlobal
