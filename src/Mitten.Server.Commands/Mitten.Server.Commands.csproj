@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12C6D375-DDCF-4397-9088-258ABA270BED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Foundation.Server.Commands</RootNamespace>
+    <AssemblyName>Mitten.Server.Commands</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\System.Reactive.Interfaces.3.1.1\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\System.Reactive.Core.3.1.1\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\System.Reactive.Linq.3.1.1\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AsyncCommand.cs" />
+    <Compile Include="BadRequestException.cs" />
+    <Compile Include="BaseCommand.cs" />
+    <Compile Include="Command.cs" />
+    <Compile Include="CommandEvent.cs" />
+    <Compile Include="CommandExecutedEvent.cs" />
+    <Compile Include="CommandExecutionContext.cs" />
+    <Compile Include="CommandExecutionEventType.cs" />
+    <Compile Include="CommandExecutionException.cs" />
+    <Compile Include="CommandExecutionMetrics.cs" />
+    <Compile Include="CommandExecutionStartedEvent.cs" />
+    <Compile Include="CommandFailureType.cs" />
+    <Compile Include="CommandKey.cs" />
+    <Compile Include="CommandProperties.cs" />
+    <Compile Include="CommandResult.cs" />
+    <Compile Include="CommandWarningEvent.cs" />
+    <Compile Include="InvalidStateException.cs" />
+    <Compile Include="NoOpEventPublisher.cs" />
+    <Compile Include="ResourceNotFoundException.cs" />
+    <Compile Include="UnhandledCommandException.cs" />
+    <Compile Include="Unit.cs" />
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="AsyncDelegateCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mitten.Server\Mitten.Server.csproj">
+      <Project>{28420254-8201-4AA5-877D-29E81B6C7320}</Project>
+      <Name>Mitten.Server</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

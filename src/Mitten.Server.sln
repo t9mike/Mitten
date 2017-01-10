@@ -1,0 +1,59 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{0B957826-5E30-4C48-B333-D3223037874D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8AD6986A-36F6-4699-B23A-803F1EAA3FBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mitten.Server.Commands", "Mitten.Server.Commands\Mitten.Server.Commands.csproj", "{12C6D375-DDCF-4397-9088-258ABA270BED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mitten.Server.Notifications", "Mitten.Server.Notifications\Mitten.Server.Notifications.csproj", "{78E08AC9-EFEF-4E23-BF31-5E50B05CE6E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mitten.Server.Tests.Unit", "Mitten.Server.Tests.Unit\Mitten.Server.Tests.Unit.csproj", "{E3A7C81E-4FD6-46C2-9AD0-7F72C1C5B170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mitten.Server.Notifications.Tests.Unit", "Mitten.Server.Notifications.Tests.Unit\Mitten.Server.Notifications.Tests.Unit.csproj", "{21486056-5788-437A-BC69-DB6B5CAE9799}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mitten.Server.Commands.Tests.Unit", "Mitten.Server.Commands.Tests.Unit\Mitten.Server.Commands.Tests.Unit.csproj", "{911715FF-3E7D-4B4A-9477-EB2371E3788F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mitten.Server", "Mitten.Server\Mitten.Server.csproj", "{28420254-8201-4AA5-877D-29E81B6C7320}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12C6D375-DDCF-4397-9088-258ABA270BED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C6D375-DDCF-4397-9088-258ABA270BED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C6D375-DDCF-4397-9088-258ABA270BED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C6D375-DDCF-4397-9088-258ABA270BED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E08AC9-EFEF-4E23-BF31-5E50B05CE6E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E08AC9-EFEF-4E23-BF31-5E50B05CE6E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E08AC9-EFEF-4E23-BF31-5E50B05CE6E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E08AC9-EFEF-4E23-BF31-5E50B05CE6E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A7C81E-4FD6-46C2-9AD0-7F72C1C5B170}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A7C81E-4FD6-46C2-9AD0-7F72C1C5B170}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A7C81E-4FD6-46C2-9AD0-7F72C1C5B170}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A7C81E-4FD6-46C2-9AD0-7F72C1C5B170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21486056-5788-437A-BC69-DB6B5CAE9799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21486056-5788-437A-BC69-DB6B5CAE9799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21486056-5788-437A-BC69-DB6B5CAE9799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21486056-5788-437A-BC69-DB6B5CAE9799}.Release|Any CPU.Build.0 = Release|Any CPU
+		{911715FF-3E7D-4B4A-9477-EB2371E3788F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{911715FF-3E7D-4B4A-9477-EB2371E3788F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{911715FF-3E7D-4B4A-9477-EB2371E3788F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{911715FF-3E7D-4B4A-9477-EB2371E3788F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28420254-8201-4AA5-877D-29E81B6C7320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28420254-8201-4AA5-877D-29E81B6C7320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28420254-8201-4AA5-877D-29E81B6C7320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28420254-8201-4AA5-877D-29E81B6C7320}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12C6D375-DDCF-4397-9088-258ABA270BED} = {0B957826-5E30-4C48-B333-D3223037874D}
+		{78E08AC9-EFEF-4E23-BF31-5E50B05CE6E8} = {0B957826-5E30-4C48-B333-D3223037874D}
+		{E3A7C81E-4FD6-46C2-9AD0-7F72C1C5B170} = {8AD6986A-36F6-4699-B23A-803F1EAA3FBE}
+		{21486056-5788-437A-BC69-DB6B5CAE9799} = {8AD6986A-36F6-4699-B23A-803F1EAA3FBE}
+		{911715FF-3E7D-4B4A-9477-EB2371E3788F} = {8AD6986A-36F6-4699-B23A-803F1EAA3FBE}
+		{28420254-8201-4AA5-877D-29E81B6C7320} = {0B957826-5E30-4C48-B333-D3223037874D}
+	EndGlobalSection
+EndGlobal

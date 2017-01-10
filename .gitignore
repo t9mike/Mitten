@@ -1,0 +1,52 @@
+#Autosave files
+*~
+
+# Local builds
+.builds
+
+# Configurable build targets
+.targets
+
+# Local repository cache
+Cache
+
+# Build/test output
+obj
+bin
+test-results
+
+# NUnit
+TestResult.xml
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
+# Backup & report files from Visual Studio
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.htm
+UpgradeLog*.xml
+
+# DB Project files
+*.dbmdl
+*.log
+
+# Per-user data
+*.DS_Store
+*.sln.cache
+*.suo
+*.userprefs
+*.usertasks
+*.user
+
+# ReSharper
+*_Resharper.*
+*.Resharper
+
+# dotCover
+*.dotCover
+packages
+*.orig
+
+# Nancy
+keystore
