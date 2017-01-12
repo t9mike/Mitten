@@ -25,7 +25,6 @@ namespace Mitten.Server.Events
         /// <summary>
         /// Registers a handler to handle the specified event.
         /// </summary>
-        /// <typeparam name="TEvent">The type of event.</typeparam>
         /// <param name="handler">An event handler.</param>
         public void Register<TEventData>(Action<TEventData> handler)
             where TEventData : EventData

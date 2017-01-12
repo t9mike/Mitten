@@ -9,6 +9,12 @@ namespace Mitten.Server.Json
     /// </summary>
     public class PrivateSetterContractResolver : DefaultContractResolver
     {
+        /// <summary>
+        /// Creates a JsonProperty for the given MemberInfo.
+        /// </summary>
+        /// <param name="member">The member to create a JsonProperty for.</param>
+        /// <param name="memberSerialization">The member's parent MemberSerialization.</param>
+        /// <returns>A created JsonProperty for the given MemberInfo.</returns>
         protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
         {
             JsonProperty jsonProperty = base.CreateProperty(member, memberSerialization);

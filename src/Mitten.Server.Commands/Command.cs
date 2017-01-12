@@ -27,6 +27,7 @@ namespace Mitten.Server.Commands
         /// Initializes a new instance of the Command class.
         /// </summary>
         /// <param name="groupName">A name used to identify a group of similar or related commands.</param>
+        /// <param name="commandName">The name of the command.</param>
         protected Command(string groupName, string commandName)
             : this(groupName, commandName, CommandProperties.Default)
         {
@@ -62,7 +63,6 @@ namespace Mitten.Server.Commands
         /// <summary>
         /// Gets an observable to be executed for the current command.
         /// </summary>
-        /// <typeparam name="TResponse">The Type of response from the command.</typeparam>
         /// <returns>An observable.</returns>
         internal protected override sealed IObservable<TResponse> GetExecutionObservable()
         {

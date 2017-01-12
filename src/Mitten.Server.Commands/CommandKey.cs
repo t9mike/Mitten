@@ -48,6 +48,12 @@ namespace Mitten.Server.Commands
             return (this.commandGroup + this.commandName).GetHashCode();
         }
 
+        /// <summary>
+        /// Compares the objects for equality.
+        /// </summary>
+        /// <param name="lhs">The left hand side.</param>
+        /// <param name="rhs">The right hand side.</param>
+        /// <returns>True if they are equal.</returns>
         public static bool operator ==(CommandKey lhs, CommandKey rhs)
         {
             if (object.ReferenceEquals(lhs, rhs))
@@ -63,6 +69,12 @@ namespace Mitten.Server.Commands
             return CommandKey.AreEqual(lhs, rhs);
         }
 
+        /// <summary>
+        /// Compares the objects for equality.
+        /// </summary>
+        /// <param name="lhs">The left hand side.</param>
+        /// <param name="rhs">The right hand side.</param>
+        /// <returns>True if they are not equal, otherwise false.</returns>
         public static bool operator !=(CommandKey lhs, CommandKey rhs)
         {
             return !(lhs == rhs);

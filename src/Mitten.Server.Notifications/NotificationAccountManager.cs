@@ -80,6 +80,7 @@ namespace Mitten.Server.Notifications
         /// Attempts to disable a specific type of notifications for an account.
         /// </summary>
         /// <param name="accountId">The id for the account whose notifications to disable.</param>
+        /// <param name="notificationType">The type of notification to disable.</param>
         /// <returns>True if the notifications were disabled otherwise false if an account notifications aren't currently enabled.</returns>
         public bool TryDisableNotifications(TKey accountId, NotificationType notificationType)
         {

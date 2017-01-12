@@ -7,13 +7,11 @@
 # Configurable build targets
 .targets
 
-# Local repository cache
-Cache
-
 # Build/test output
 obj
 bin
 test-results
+Cake
 
 # NUnit
 TestResult.xml
@@ -50,3 +48,6 @@ packages
 
 # Nancy
 keystore
+
+# NuGet
+nuget.exe

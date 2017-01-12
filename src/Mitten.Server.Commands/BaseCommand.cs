@@ -71,7 +71,6 @@ namespace Mitten.Server.Commands
         /// <summary>
         /// Gets an observable to be executed for the current command.
         /// </summary>
-        /// <typeparam name="TResponse">The Type of response from the command.</typeparam>
         /// <returns>An observable.</returns>
         internal protected abstract IObservable<TResponse> GetExecutionObservable();
 

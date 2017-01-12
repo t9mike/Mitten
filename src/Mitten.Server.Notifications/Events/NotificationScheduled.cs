@@ -13,6 +13,7 @@ namespace Mitten.Server.Notifications.Events
         /// </summary>
         /// <param name="accountId">The id of the account that the notification will be sent to.</param>
         /// <param name="notification">The notification that was scheduled.</param>
+        /// <param name="deliveryDateTime">The date and time the notification should be delivered.</param>
         internal NotificationScheduled(string accountId, Notification notification, DateTimeOffset deliveryDateTime)
         {
             Throw.IfArgumentNullOrWhitespace(accountId, nameof(accountId));
