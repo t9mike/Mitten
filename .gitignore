@@ -50,4 +50,5 @@ packages
 keystore
 
 # NuGet
+*.nupkg
 nuget.exe

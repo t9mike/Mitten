@@ -41,6 +41,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Mitten.Server.SolutionInfo.cs">
+      <Link>Properties\Mitten.Server.SolutionInfo.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Events\ApplicationEvent.cs" />
     <Compile Include="Events\EventData.cs" />

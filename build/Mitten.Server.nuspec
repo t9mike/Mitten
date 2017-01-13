@@ -10,10 +10,6 @@
     <description>The Mitten Component Library is a set of components used to support the development of .NET applications.</description>
     <copyright>Copyright (c) 2017 Jeremy Vainavicz</copyright>
     <tags></tags>
-    <dependencies>
-      <dependency id="Newtonsoft.Json" version="9.0.1" />
-      <dependency id="NodaTime" version="1.3.2" />
-    </dependencies>
   </metadata>
   <files>
     <file src="net-4.5\Mitten.Server.dll" target="lib\net45" />

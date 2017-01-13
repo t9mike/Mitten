@@ -4,16 +4,22 @@
 
 var target = Argument("target", "Package");
 var configuration = Argument("configuration", "Release");
-var version = "0.0.2";
+
+//////////////////////////////////////////////////////////////////////
+// CONSTANTS
+//////////////////////////////////////////////////////////////////////
+
+var version = "0.0.4";
+var mittenServerId = "Mitten.Server"; 
 
 //////////////////////////////////////////////////////////////////////
 // PREPARATION
 //////////////////////////////////////////////////////////////////////
 
 // Define directories.
-var projectDir = Directory("../src");
-var buildDir = projectDir + Directory("bin") + Directory(configuration);
-var packageDir = projectDir + Directory("nuget");
+var sourceDir = Directory("../src");
+var buildDir = sourceDir + Directory("bin") + Directory(configuration);
+var packageDir = sourceDir + Directory("nuget");
 
 //////////////////////////////////////////////////////////////////////
 // BUILD
@@ -25,6 +31,20 @@ Task("Clean")
         CleanDirectory(buildDir);
     });
 
+Task("Update-Solution-Info")
+    .IsDependentOn("Restore-NuGet-Packages")
+    .Does(() =>
+    {
+        var file = "../src/Mitten.Server.SolutionInfo.cs";
+
+        CreateAssemblyInfo(file, new AssemblyInfoSettings()
+        {
+            Version = version,
+            FileVersion = version,
+            Copyright = "Copyright (c) " + DateTime.Now.Year + " Jeremy Vainavicz"
+        });
+    });
+
 Task("Restore-NuGet-Packages")
     .IsDependentOn("Clean")
     .Does(() =>
@@ -33,7 +53,7 @@ Task("Restore-NuGet-Packages")
     });
 
 Task("Build")
-    .IsDependentOn("Restore-NuGet-Packages")
+    .IsDependentOn("Update-Solution-Info")
     .Does(() =>
     {
         if(IsRunningOnWindows())
@@ -52,33 +72,74 @@ Task("Build")
 // PACKAGE
 //////////////////////////////////////////////////////////////////////
 
-Task("Build-NuGet-Package")
+Task("Build-NuGet-Packages")
     .IsDependentOn("Build")
     .Does(() =>
     {
-	var baseDir = packageDir + Directory("bin/Mitten.Server");
-        var libDir = baseDir + Directory("net-4.5");
+        CleanDirectory(packageDir);
 
-	CleanDirectory(packageDir);
-        CreateDirectory(libDir);	
+        BuildPackage(
+            "Mitten.Server",
+            GetDependency("../src/Mitten.Server/packages.config", "Newtonsoft.Json"),
+            GetDependency("../src/Mitten.Server/packages.config", "NodaTime"));
 
-	CopyFileToDirectory(buildDir + File("Mitten.Server.dll"), libDir);
-        CopyFileToDirectory(buildDir + File("Mitten.Server.xml"), libDir);
+        BuildPackage(
+            "Mitten.Server.Commands",
+            new NuSpecDependency() { Id = mittenServerId, Version = version },
+            GetDependency("../src/Mitten.Server.Commands/packages.config", "Newtonsoft.Json"),
+            GetDependency("../src/Mitten.Server.Commands/packages.config", "NodaTime"),
+            GetDependency("../src/Mitten.Server.Commands/packages.config", "System.Reactive.Core"),
+            GetDependency("../src/Mitten.Server.Commands/packages.config", "System.Reactive.Interfaces"),
+            GetDependency("../src/Mitten.Server.Commands/packages.config", "System.Reactive.Linq"));
 
-        NuGetPack("Mitten.Server.nuspec", new NuGetPackSettings()
-        {
-            Version = version,
-            BasePath = baseDir,
-            OutputDirectory = packageDir
-        });
+        BuildPackage(
+            "Mitten.Server.Notifications",
+            new NuSpecDependency() { Id = mittenServerId, Version = version },
+            GetDependency("../src/Mitten.Server.Notifications/packages.config", "Newtonsoft.Json"),
+            GetDependency("../src/Mitten.Server.Notifications/packages.config", "NodaTime"),
+            GetDependency("../src/Mitten.Server.Notifications/packages.config", "PushSharp"));
     });
+
+//////////////////////////////////////////////////////////////////////
+// HELPER METHODS
+//////////////////////////////////////////////////////////////////////
+
+void BuildPackage(string projectName, params NuSpecDependency[] dependencies)
+{
+    var baseDir = packageDir + Directory("bin/" + projectName);
+    var libDir = baseDir + Directory("net-4.5");
+
+    CreateDirectory(libDir);	
+
+    CopyFileToDirectory(buildDir + File(projectName + ".dll"), libDir);
+    CopyFileToDirectory(buildDir + File(projectName + ".xml"), libDir);
+
+    NuGetPack(projectName + ".nuspec", new NuGetPackSettings()
+    {
+        Version = version,
+        Dependencies = new List<NuSpecDependency>(dependencies),
+        BasePath = baseDir,
+        OutputDirectory = packageDir
+    });
+}
+
+NuSpecDependency GetDependency(string packageConfig, string dependencyId)
+{
+    var dependencyVersion = XmlPeek(File(packageConfig), "/packages/package[@id='" + dependencyId + "']/@version");
+    
+    return new NuSpecDependency()
+    {
+        Id = dependencyId,
+        Version = dependencyVersion
+    };
+}
 
 //////////////////////////////////////////////////////////////////////
 // TASK TARGETS
 //////////////////////////////////////////////////////////////////////
 
 Task("Package")
-    .IsDependentOn("Build-NuGet-Package");
+    .IsDependentOn("Build-NuGet-Packages");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION
