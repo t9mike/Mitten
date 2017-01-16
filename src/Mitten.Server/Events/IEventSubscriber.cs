@@ -8,7 +8,7 @@ namespace Mitten.Server.Events
         /// <summary>
         /// Processes an received event. 
         /// </summary>
-        /// <param name="eventData">The event data.</param>
-        void ProcessEvent(EventData eventData);
+        /// <param name="eventEnvelope">An event envelope.</param>
+        void ProcessEvent(EventEnvelope eventEnvelope);
     }
 }

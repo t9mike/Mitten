@@ -5,7 +5,7 @@ namespace Mitten.Server.Notifications.Events
     /// <summary>
     /// Base class for events raised inside the notifications component.
     /// </summary>
-    public abstract class NotificationEvent : SystemEvent
+    public abstract class NotificationEvent : EventBase
     {
         /// <summary>
         /// Initializes a new instance of the NotificationEvent class.

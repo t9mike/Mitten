@@ -6,7 +6,7 @@ namespace Mitten.Server.Notifications.Events
     /// <summary>
     /// Occurs when a notification has been scheduled.
     /// </summary>
-    public class NotificationScheduled : ApplicationEvent
+    public class NotificationScheduled : EventBase
     {
         /// <summary>
         /// Initializes a new instance of the NotificationScheduled class.

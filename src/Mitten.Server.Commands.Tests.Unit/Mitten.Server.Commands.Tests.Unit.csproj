@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{911715FF-3E7D-4B4A-9477-EB2371E3788F}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Foundation.Server.Commands.Tests.Unit</RootNamespace>
+    <RootNamespace>Mitten.Server.Commands.Tests.Unit</RootNamespace>
     <AssemblyName>Mitten.Server.Commands.Tests.Unit</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -54,12 +54,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsyncCommandTests.cs" />
     <Compile Include="CommandExecutionContextTests.cs" />
-    <Compile Include="CommandExecutionMetricsTests.cs" />
     <Compile Include="CommandTests.cs" />
     <Compile Include="ITestCommand.cs" />
     <Compile Include="TestAsyncCommand.cs" />
@@ -74,6 +75,9 @@
       <Project>{12C6D375-DDCF-4397-9088-258ABA270BED}</Project>
       <Name>Mitten.Server.Commands</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,14 +5,13 @@ namespace Mitten.Server.Commands
     /// <summary>
     /// Base class for a command event.
     /// </summary>
-    public abstract class CommandEvent : EventData
+    public abstract class CommandEvent : EventBase
     {
         /// <summary>
         /// Initializes a new instance of the CommandEvent class.
         /// </summary>
         /// <param name="commandKey">The key for the command.</param>
         internal CommandEvent(CommandKey commandKey)
-            : base(EventType.System)
         {
             Throw.IfArgumentNull(commandKey, "commandKey");
             this.CommandKey = commandKey;

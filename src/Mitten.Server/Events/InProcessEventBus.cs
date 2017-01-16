@@ -23,13 +23,31 @@ namespace Mitten.Server.Events
         /// Publishes an event.
         /// </summary>
         /// <param name="eventData">The event data to publish.</param>
-        public async void Publish(EventData eventData)
+        public async void Publish(IEvent eventData)
         {
             foreach (IEventSubscriber subscriber in this.eventSubscribers)
             {
                 try
                 {
-                    await Task.Run(() => subscriber.ProcessEvent(eventData)).ConfigureAwait(false);
+                    await Task.Run(
+                        () =>
+                        {
+                            EventEnvelope eventEnvelope =
+                                new EventEnvelope(
+                                    eventData.Name, 
+                                    type =>
+                                    {
+                                        if (!type.IsAssignableFrom(eventData.GetType()))
+                                        {
+                                            throw new InvalidOperationException("Cannot assign event of Type (" + eventData.GetType().FullName + ") to Type (" + type.FullName + ").");
+                                        }
+
+                                        return eventData;
+                                    });
+
+                            subscriber.ProcessEvent(eventEnvelope);
+                        })
+                        .ConfigureAwait(false);
                 }
                 catch (Exception ex)
                 {

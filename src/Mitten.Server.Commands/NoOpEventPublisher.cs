@@ -1,3 +1,4 @@
+using System;
 using Mitten.Server.Events;
 
 namespace Mitten.Server.Commands
@@ -16,7 +17,7 @@ namespace Mitten.Server.Commands
         {
         }
 
-        void IEventPublisher.Publish(EventData eventData)
+        void IEventPublisher.Publish(IEvent eventData)
         {
         }
     }

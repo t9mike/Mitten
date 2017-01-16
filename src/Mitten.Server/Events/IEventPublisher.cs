@@ -9,6 +9,6 @@ namespace Mitten.Server.Events
         /// Publishes an event.
         /// </summary>
         /// <param name="eventData">The event data to publish.</param>
-        void Publish(EventData eventData);
+        void Publish(IEvent eventData);
     }
 }

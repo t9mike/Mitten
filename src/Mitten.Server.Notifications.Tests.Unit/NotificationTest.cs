@@ -22,7 +22,7 @@ namespace Mitten.Server.Notifications.Tests.Unit
         private readonly Lazy<INotificationAccountRepository<Guid>> notificationAccountRepository;
         private readonly Lazy<INotificationRepository<Guid>> notificationRepository;
 
-        private readonly List<EventData> raisedEvents;
+        private readonly List<IEvent> raisedEvents;
 
         /// <summary>
         /// Initializes a new instance of the NotificationTest class.
@@ -32,11 +32,11 @@ namespace Mitten.Server.Notifications.Tests.Unit
             this.notificationAccountRepository = this.CreateLazySubstitute<INotificationAccountRepository<Guid>>();
             this.notificationRepository = this.CreateLazySubstitute<INotificationRepository<Guid>>();
 
-            this.raisedEvents = new List<EventData>();
+            this.raisedEvents = new List<IEvent>();
             this.EventPublisher = Substitute.For<IEventPublisher>();
             this.EventPublisher
-                .When(publisher => publisher.Publish(Arg.Any<EventData>()))
-                .Do(callInfo => this.raisedEvents.Add(callInfo.Arg<EventData>()));
+                .When(publisher => publisher.Publish(Arg.Any<IEvent>()))
+                .Do(callInfo => this.raisedEvents.Add(callInfo.Arg<IEvent>()));
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Mitten.Server.Notifications.Tests.Unit
         /// <summary>
         /// Gets a list of events that were raised during the test.
         /// </summary>
-        public IEnumerable<EventData> RaisedEvents => this.raisedEvents;
+        public IEnumerable<IEvent> RaisedEvents => this.raisedEvents;
 
         /// <summary>
         /// Gets a notification if one was sent.

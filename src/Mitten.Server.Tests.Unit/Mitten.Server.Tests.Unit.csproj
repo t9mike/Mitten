@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E3A7C81E-4FD6-46C2-9AD0-7F72C1C5B170}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Foundation.Server.Tests.Unit</RootNamespace>
+    <RootNamespace>Mitten.Server.Tests.Unit</RootNamespace>
     <AssemblyName>Mitten.Server.Tests.Unit</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -25,6 +25,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="FluentAssertions.Core">
       <HintPath>..\packages\FluentAssertions.4.18.0\lib\net45\FluentAssertions.Core.dll</HintPath>
@@ -45,12 +46,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\EventEnvelopeTests.cs" />
+    <Compile Include="Events\InProcessEventBusTests.cs" />
+    <Compile Include="Events\TestEvent.cs" />
     <Compile Include="Test.cs" />
     <Compile Include="DateTimeConverterTests.cs" />
     <Compile Include="Extensions\DateTimeExtensionsTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

@@ -3,13 +3,14 @@ namespace Mitten.Server.Events
     /// <summary>
     /// Represents a warning about the current health or state of the system.
     /// </summary>
-    public sealed class SystemWarningEvent : SystemEvent
+    public sealed class SystemWarningEvent : EventBase
     {
         /// <summary>
         /// Initializes a new instance of the SystemWarningEvent class.
         /// </summary>
         /// <param name="description">A description of the warning.</param>
         public SystemWarningEvent(string description)
+            : base(nameof(SystemWarningEvent))
         {
             Throw.IfArgumentNullOrWhitespace(description, nameof(description));
             this.Description = description;

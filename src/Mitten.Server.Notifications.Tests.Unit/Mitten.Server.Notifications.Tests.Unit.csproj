@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{21486056-5788-437A-BC69-DB6B5CAE9799}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Foundation.Server.Notifications.Tests.Unit</RootNamespace>
+    <RootNamespace>Mitten.Server.Notifications.Tests.Unit</RootNamespace>
     <AssemblyName>Mitten.Server.Notifications.Tests.Unit</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -65,6 +65,9 @@
       <Project>{78E08AC9-EFEF-4E23-BF31-5E50B05CE6E8}</Project>
       <Name>Mitten.Server.Notifications</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

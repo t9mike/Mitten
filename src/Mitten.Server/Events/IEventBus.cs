@@ -1,3 +1,5 @@
+using System;
+
 namespace Mitten.Server.Events
 {
     /// <summary>

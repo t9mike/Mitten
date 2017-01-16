@@ -5,7 +5,7 @@ namespace Mitten.Server.Events
     /// <summary>
     /// Represents an error that occurred somewhere in the system.
     /// </summary>
-    public sealed class SystemErrorEvent : SystemEvent
+    public sealed class SystemErrorEvent : EventBase
     {
         /// <summary>
         /// Initializes a new instance of the SystemErrorEvent class.
@@ -22,6 +22,7 @@ namespace Mitten.Server.Events
         /// <param name="description">A description of the error.</param>
         /// <param name="exception">An exception if the error was due to a thrown exception, otherwise null.</param>
         public SystemErrorEvent(string description, Exception exception)
+            : base(nameof(SystemErrorEvent))
         {
             Throw.IfArgumentNullOrWhitespace(description, nameof(description));
 

@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{12C6D375-DDCF-4397-9088-258ABA270BED}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Foundation.Server.Commands</RootNamespace>
+    <RootNamespace>Mitten.Server.Commands</RootNamespace>
     <AssemblyName>Mitten.Server.Commands</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -62,7 +62,6 @@
     <Compile Include="CommandExecutionContext.cs" />
     <Compile Include="CommandExecutionEventType.cs" />
     <Compile Include="CommandExecutionException.cs" />
-    <Compile Include="CommandExecutionMetrics.cs" />
     <Compile Include="CommandExecutionStartedEvent.cs" />
     <Compile Include="CommandFailureType.cs" />
     <Compile Include="CommandKey.cs" />

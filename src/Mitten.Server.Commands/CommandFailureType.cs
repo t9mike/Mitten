@@ -6,11 +6,6 @@ namespace Mitten.Server.Commands
     public enum CommandFailureType
     {
         /// <summary>
-        /// Invalid.
-        /// </summary>
-        Invalid = 0,
-
-        /// <summary>
         /// Indicates that a command failed due to a timeout.
         /// </summary>
         Timeout,
