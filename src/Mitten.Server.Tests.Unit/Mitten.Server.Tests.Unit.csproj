@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\DispatchingSubscriberTests.cs" />
     <Compile Include="Events\EventEnvelopeTests.cs" />
     <Compile Include="Events\InProcessEventBusTests.cs" />
     <Compile Include="Events\TestEvent.cs" />
