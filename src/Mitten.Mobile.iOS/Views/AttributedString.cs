@@ -63,9 +63,13 @@ namespace Mitten.Mobile.iOS.Views
             foreach (StyledText.TextPart part in styledText.Parts)
             {
                 FontStyle fontStyle = FontStyle.None;
-                if (part.Style == StyledText.Style.Bold)
+                if (part.Style.HasFlag(StyledText.Style.Bold))
                 {
-                    fontStyle = FontStyle.Bold;
+                    fontStyle |= FontStyle.Bold;
+                }
+                if (part.Style.HasFlag(StyledText.Style.Italic))
+                {
+                    fontStyle |= FontStyle.Italic;
                 }
 
                 UIFont font =
@@ -78,6 +82,11 @@ namespace Mitten.Mobile.iOS.Views
                 NSRange range = new NSRange(part.StartIndex, part.Text.Length);
 
                 attributedText.AddAttribute(UIStringAttributeKey.Font, font, range);
+                if (part.Style.HasFlag(StyledText.Style.Underline))
+                {
+                    attributedText.AddAttribute(UIStringAttributeKey.UnderlineStyle,
+                        NSNumber.FromInt32((int)NSUnderlineStyle.Single), range);
+                }
             }
 
             attributedText.AddAttribute(UIStringAttributeKey.BackgroundColor, theme.BackgroundColor.ToUIColor(), fullRange);

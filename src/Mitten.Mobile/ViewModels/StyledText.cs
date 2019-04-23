@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
+using System;
 
 namespace Mitten.Mobile.ViewModels
 {
@@ -11,6 +12,7 @@ namespace Mitten.Mobile.ViewModels
         /// <summary>
         /// Defines the types of styles supported.
         /// </summary>
+        [Flags]
         public enum Style
         {
             /// <summary>
@@ -21,7 +23,11 @@ namespace Mitten.Mobile.ViewModels
             /// <summary>
             /// Represents a bold styling.
             /// </summary>
-            Bold,
+            Bold = 1,
+
+            Italic = 2,
+
+            Underline = 4
         }
 
         private readonly List<TextPart> parts;
