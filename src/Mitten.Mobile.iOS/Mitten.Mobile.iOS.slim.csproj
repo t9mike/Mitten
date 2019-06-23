@@ -53,9 +53,9 @@
     <Compile Include="Views\UIFontExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mitten.Mobile\Mitten.Mobile.slim.csproj">
-      <Project>{8702BA33-9C3F-415F-BB55-FE2EB7EBFCE0}</Project>
-      <Name>Mitten.Mobile.slim</Name>
+    <ProjectReference Include="..\Mitten.Mobile\Mitten.Mobile.slim.iOS.csproj">
+      <Project>{DB230CBF-4E4F-4872-9C94-147F9F8D5119}</Project>
+      <Name>Mitten.Mobile.slim.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
