@@ -201,7 +201,25 @@ namespace Mitten.Mobile.iOS
             }
 
             UIViewController viewControllerToMakeRoot = this.viewControllerFactory.InstantiateViewController<TViewModel>(options.Parameter);
-            UIWindow window = UIApplication.SharedApplication.KeyWindow;
+            // iOS 27 returns null from UIApplication.KeyWindow under the scene
+            // lifecycle; resolve via ConnectedScenes there. iOS 26 and earlier
+            // keep the old KeyWindow path (the scene lookup misbehaves there).
+            UIWindow window = null;
+            if (UIDevice.CurrentDevice.CheckSystemVersion(27, 0))
+            {
+                foreach (var scene in UIApplication.SharedApplication.ConnectedScenes)
+                {
+                    if (scene is UIWindowScene window_scene)
+                    {
+                        foreach (var w in window_scene.Windows)
+                        {
+                            if (w.IsKeyWindow) { window = w; break; }
+                        }
+                    }
+                    if (window != null) break;
+                }
+            }
+            window ??= UIApplication.SharedApplication.KeyWindow;
 
             window.RootViewController = 
                 viewControllerToMakeRoot.NavigationController == null
